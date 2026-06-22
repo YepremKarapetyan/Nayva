@@ -58,5 +58,8 @@
   .top-bar-divider:first-of-type { display: none; }
 }
 @media (max-width: 600px) {
-  .top-bar { padding: 10px 16px; }
+  .top-bar { padding: 8px 12px; gap: 20px; }
+  .top-bar-left { gap: 8px; }
+  .top-bar-item { font-size: 12px; gap: 4px; }
+  .top-bar-divider { height: 20px; }
 }

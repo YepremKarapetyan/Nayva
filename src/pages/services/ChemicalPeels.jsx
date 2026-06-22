@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLang } from '../../context/LanguageContext';
 import './Lifting.css';
@@ -9,6 +9,7 @@ const VIDEO_SRC = VIDEOS.chemicalPeels;
 export default function ChemicalPeels() {
   const [open, setOpen] = useState({});
   const [muted, setMuted] = useState(true);
+  const videoRef = useRef(null);
   const navigate = useNavigate();
   const { locale } = useLang();
   const p = locale.serviceDetailPages.chemicalPeels;
@@ -55,10 +56,11 @@ export default function ChemicalPeels() {
             src={VIDEO_SRC}
             autoPlay
             loop
-            muted={muted}
+            muted
             playsInline
+            ref={videoRef}
           />
-          <button className="lf-mute-btn" onClick={() => setMuted(m => !m)}>
+          <button className="lf-mute-btn" onClick={() => { const next = !muted; setMuted(next); if (videoRef.current) videoRef.current.muted = next; }}>
           {muted ? (
             <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/>

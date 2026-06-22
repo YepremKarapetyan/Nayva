@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { useState, useRef, useCallback, useEffect, memo } from 'react';
 import { useLang } from '../context/LanguageContext';
 import { VIDEOS } from '../config/videos';
+import { db } from '../firebase';
+import { collection, addDoc, getDocs, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import './Home.css';
-
-const STORAGE_KEY = 'nayva_reviews';
 
 const PAIR_COUNT = 41;
 const BEFORE_AFTER_PAIRS = Array.from({ length: PAIR_COUNT }, (_, i) => ({
@@ -40,14 +40,6 @@ const DEFAULT_REVIEWS = [
   },
 ];
 
-function loadReviews() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : [];
-  } catch {
-    return [];
-  }
-}
 
 
 const CARD_GAP = 14;
@@ -139,12 +131,20 @@ export default function Home() {
     items: h.services.cards[i].items,
   }));
 
-  const [userReviews, setUserReviews] = useState(loadReviews);
+  const [userReviews, setUserReviews] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState(emptyForm);
   const [hoverStar, setHoverStar] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const q = query(collection(db, 'reviews'), orderBy('createdAt', 'asc'));
+    getDocs(q).then(snapshot => {
+      const fetched = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setUserReviews(fetched);
+    });
+  }, []);
 
   const allReviews = [...DEFAULT_REVIEWS, ...userReviews];
 
@@ -155,13 +155,18 @@ export default function Home() {
     sliderRef.current.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.text.trim()) return;
-    const newReview = { name: form.name.trim(), stars: form.stars, title: form.title.trim(), text: form.text.trim() };
-    const updated = [...userReviews, newReview];
-    setUserReviews(updated);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    const newReview = {
+      name: form.name.trim(),
+      stars: form.stars,
+      title: form.title.trim(),
+      text: form.text.trim(),
+      createdAt: serverTimestamp(),
+    };
+    const docRef = await addDoc(collection(db, 'reviews'), newReview);
+    setUserReviews(prev => [...prev, { id: docRef.id, ...newReview }]);
     setForm(emptyForm);
     setShowForm(false);
     setSubmitted(true);
@@ -310,7 +315,7 @@ export default function Home() {
           </div>
           <div className="reviews-slider" ref={sliderRef}>
             {allReviews.map((r, i) => (
-              <div key={i} className={`review-card${r.featured ? ' featured' : ''}`}>
+              <div key={r.id ?? i} className={`review-card${r.featured ? ' featured' : ''}`}>
                 <div className="review-header">
                   <div className="review-avatar">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

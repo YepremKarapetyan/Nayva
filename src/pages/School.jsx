@@ -83,7 +83,7 @@ const WHY_IMGS = [
 ];
 
 export default function School() {
-  const { locale } = useLang();
+  const { locale, lang } = useLang();
   const s = locale.schoolPage;
   const cur = s.course.curriculum;
 
@@ -158,7 +158,7 @@ export default function School() {
       <section className="school-hero">
         <div className="school-hero-bg" />
         <div className="school-hero-overlay" />
-        <div className="school-hero-content">
+        <div className={`school-hero-content${lang === 'am' ? ' school-hero-content--am' : ''}`}>
           <h1>{s.hero.title}</h1>
           <p>{s.hero.subtitle}</p>
           <div className="school-hero-btn-wrap">
