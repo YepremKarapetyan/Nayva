@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCMgGd87VHNznX4rQEIr0zh1sEDZz5-DKA",
-  authDomain: "nayva-reviews.firebaseapp.com",
-  projectId: "nayva-reviews",
-  storageBucket: "nayva-reviews.firebasestorage.app",
-  messagingSenderId: "460637953155",
-  appId: "1:460637953155:web:24493b54969edfc56d8fb6"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

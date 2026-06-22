@@ -16,6 +16,10 @@ dist-ssr
 public/videos/
 public/Images/Home\ page/hero.mp4
 
+# Environment variables
+.env
+.env.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
