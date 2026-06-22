@@ -1,0 +1,228 @@
+/* HERO */
+.about-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: rgba(0,127,126,1);
+  border-radius: 0 0 71px 71px;
+  overflow: visible;
+  z-index: 1;
+}
+.hero-doc-wrap {
+  position: absolute;
+  bottom: -119px; left: 14%;
+  width: 36%; height: 100%;
+  z-index: 5; pointer-events: none;
+}
+.hero-doc-wrap::before {
+  content: '';
+  position: absolute;
+  bottom: 8%; left: 50%;
+  transform: translateX(-50%);
+  width: 90%; height: 85%;
+  background: radial-gradient(ellipse at center,
+    rgba(255,255,255,0.55) 0%,
+    rgba(180,245,240,0.35) 35%,
+    rgba(100,220,210,0.15) 60%,
+    transparent 78%);
+  border-radius: 50%; z-index: -1; filter: blur(8px);
+}
+.hero-doc-img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; }
+.about-hero-right {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 62%;
+  display: flex; flex-direction: column; z-index: 2;
+}
+.about-hero-text {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(20px,3vw,52px) clamp(24px,4.5vw,80px) clamp(20px,3vw,52px) clamp(100px,13vw,200px);
+}
+.about-hero-subtitle {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 42px; font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  line-height: 180%; letter-spacing: -0.022em;
+  margin-bottom: clamp(18px,2vw,32px);
+}
+.about-hero-title {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 42px; font-weight: 400;
+  color: #fff; line-height: 135%; letter-spacing: -0.022em;
+}
+.hero-card {
+  position: absolute;
+  bottom: -119px; left: 50%; transform: translateX(-50%);
+  width: min(1120px, 78vw); height: auto; min-height: clamp(100px, 16.5vw, 238px);
+  border-radius: clamp(32px, 5.8vw, 84px); background: #fff;
+  z-index: 4; display: flex; align-items: center;
+  justify-content: flex-start; padding: 0 clamp(20px, 3.3vw, 48px);
+}
+.hero-card-items {
+  display: flex; flex-direction: row;
+  gap: clamp(24px,3vw,48px);
+  margin-left: 52%; align-items: flex-start;
+}
+.hero-card-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero-card-icon {
+  width: clamp(48px,4.2vw,70px); height: clamp(48px,4.2vw,70px);
+  border-radius: 50%; background: #007f7e;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.hero-card-icon img { width: 55%; height: 55%; object-fit: contain; filter: brightness(0) invert(1); }
+.hero-card-lines { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+.hero-card-line { height: 1.5px; border-radius: 1px; background: #1a2e2c; }
+.hero-card-line:nth-child(odd)  { width: 40px; }
+.hero-card-line:nth-child(even) { width: 72px; }
+.btn-book {
+  background: linear-gradient(0deg,#0D4746,#0D4746);
+  color: #fff; border: none; border-radius: 40px;
+  padding: clamp(8px,0.8vw,13px) clamp(16px,2vw,32px);
+  font-size: clamp(11px,0.9vw,14px); font-weight: 500;
+  cursor: pointer; font-family: 'Poppins',sans-serif;
+  transition: opacity 0.2s; white-space: nowrap;
+}
+.btn-book:hover { opacity: 0.88; }
+.btn-call {
+  background: #007f7e; color: #fff; border: none;
+  border-radius: 40px;
+  padding: clamp(8px,0.8vw,13px) clamp(16px,2vw,32px);
+  font-size: clamp(11px,0.9vw,14px); font-weight: 500;
+  cursor: pointer; font-family: 'Poppins',sans-serif;
+  transition: opacity 0.2s; white-space: nowrap;
+}
+.btn-call:hover { opacity: 0.88; }
+
+/* SECTIONS */
+.about-section { padding: clamp(40px, 5.6vw, 80px) clamp(20px, 8.3vw, 120px); content-visibility: auto; contain-intrinsic-size: 0 600px; }
+.section-title { font-size: clamp(20px, 2.1vw, 30px); font-weight: 700; color: #1a3330; margin-bottom: clamp(28px, 3.6vw, 52px); padding: 0 24px; }
+
+/* DR NARINE */
+.dr-narine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); align-items: center; margin-bottom: clamp(40px, 5vw, 72px); }
+.dr-narine-grid .dr-photo-wrap { order: 2; }
+.dr-narine-grid .dr-text { order: 1; }
+.dr-text { padding: 0 24px; }
+.dr-text p { font-size: 17px; line-height: 1.85; color: #2d2d2d; margin-bottom: 18px; }
+.dr-photo-wrap { border-radius: 18px; overflow: hidden; width: 85%; margin: 0 auto; }
+.dr-photo-wrap img { width: 100%; height: auto; display: block; }
+.dr-crown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); align-items: center; }
+.dr-crown-img { border-radius: 18px; overflow: hidden; width: 85%; margin: 0 auto; }
+.dr-crown-img img { width: 100%; height: auto; display: block; }
+.dr-crown-text { padding: 24px 24px 0; }
+.dr-crown-text p { font-size: 17px; line-height: 1.85; color: #2d2d2d; margin-bottom: 18px; }
+
+/* TEAM */
+.team-member { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 72px); align-items: center; margin-bottom: clamp(40px, 5.6vw, 80px); }
+.team-photo-wrap { border-radius: 18px; overflow: hidden; width: 85%; margin: 0 auto; }
+.team-photo-wrap img { width: 100%; height: auto; display: block; }
+.team-name { font-size: 17px; font-weight: 600; color: #1a3330; margin-top: 14px; padding: 0 0 0 7.5%; text-align: left; }
+.team-member:last-child .team-name { padding: 0 7.5% 0 0; text-align: right; }
+.team-member:last-child > div:first-child { order: 2; }
+.team-member:last-child .team-text-col { order: 1; }
+.team-text-col { padding: 8px 24px 0; }
+.team-text-col p { font-size: 16.5px; line-height: 1.85; color: #2d2d2d; margin-bottom: 16px; }
+
+/* ABOUT NAYVA */
+.about-nayva-section { padding-top: 0; padding-bottom: clamp(40px, 6.9vw, 100px); padding-left: clamp(20px, 11.8vw, 170px); }
+.about-nayva-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5.6vw, 80px); align-items: start; }
+.about-nayva-imgs { position: relative; width: clamp(300px, 39.8vw, 573px); height: clamp(300px, 39.7vw, 571px); overflow: hidden; }
+.nayva-img-top { position: absolute; top: 0; left: 0; width: 62.8%; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
+.nayva-img-top img { width: 100%; height: auto; display: block; }
+.nayva-img-bottom { position: absolute; bottom: 0; right: 0; width: 62.8%; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
+.nayva-img-bottom img { width: 100%; height: auto; display: block; }
+.about-nayva-text p { font-size: 17px; line-height: 1.9; color: #2d2d2d; }
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .about-section { padding: 60px 60px; }
+  .about-nayva-section { padding-left: 60px; }
+  .hero-card { width: 92%; }
+  .about-hero-subtitle { font-size: 30px; }
+  .about-hero-title { font-size: 26px; }
+  .about-nayva-imgs { width: 100%; height: auto; aspect-ratio: 573/571; }
+  .nayva-img-top, .nayva-img-bottom { width: 62.8%; }
+}
+@media (max-width: 900px) {
+  .about-section { padding: 48px 40px; }
+  .about-nayva-section { padding-left: 40px; }
+  .dr-narine-grid, .dr-crown-grid { grid-template-columns: 1fr; gap: 28px; }
+  .dr-narine-grid .dr-photo-wrap { order: -1; }
+  .team-member { grid-template-columns: 1fr; gap: 28px; }
+  .dr-photo-wrap, .dr-crown-img, .team-photo-wrap { width: calc(100% - 48px); margin: 0 24px; }
+  .team-name { padding: 0 0 0 24px; }
+  .team-member:last-child .team-name { padding: 0 24px 0 0; }
+  .team-member:last-child > div:first-child { order: unset; }
+  .team-member:last-child .team-text-col { order: unset; }
+  .about-nayva-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-nayva-imgs { width: 100%; max-width: 573px; height: auto; aspect-ratio: 573/571; margin: 0 auto; }
+  .about-hero { aspect-ratio: 16/7; }
+  .hero-doc-wrap { left: 5%; width: 32%; bottom: -40px; }
+  .about-hero-right { width: 62%; }
+  .about-hero-text { padding: 24px 32px 90px 48px; }
+  .about-hero-subtitle { font-size: 26px; }
+  .about-hero-title { font-size: 22px; }
+  .hero-card { width: 90%; height: auto; padding: 24px 28px; border-radius: 32px; bottom: -80px; }
+  .hero-card-items { margin-left: 0; justify-content: center; width: 100%; }
+}
+/* 601–734px — hero too short, expand */
+@media (max-width: 734px) and (min-width: 601px) {
+  .about-hero { aspect-ratio: 16/9; }
+  .about-hero-subtitle { font-size: 20px; }
+  .about-hero-title { font-size: 17px; }
+  .about-hero-text { padding: 20px 24px 110px 36px; }
+}
+/* iPad mini (768px portrait) */
+@media (max-width: 780px) and (min-width: 601px) {
+  .about-hero-subtitle { font-size: 30px; }
+  .about-hero-title { font-size: 26px; }
+  .section-title { font-size: 24px; }
+  .dr-text p, .dr-crown-text p, .team-text-col p, .about-nayva-text p { font-size: 19px; }
+  .team-name { font-size: 19px; }
+}
+/* iPad / iPad Air (810–820px portrait) */
+@media (max-width: 900px) and (min-width: 781px) {
+  .section-title { font-size: 22px; }
+  .dr-text p, .dr-crown-text p, .team-text-col p, .about-nayva-text p { font-size: 18px; }
+  .team-name { font-size: 18px; }
+}
+/* iPad Pro 12.9" / Surface Pro 7 */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .section-title { font-size: 26px; }
+  .dr-text p, .dr-crown-text p, .team-text-col p, .about-nayva-text p { font-size: 18px; }
+  .team-name { font-size: 18px; }
+
+  /* Dr Narine — photo first in DOM, float right works */
+  .dr-narine-grid { display: block; overflow: hidden; margin-bottom: 64px; }
+  .dr-narine-grid .dr-photo-wrap { float: right; width: 44%; margin: 0 24px 16px 36px; order: unset; }
+
+  /* Dr Crown — image floats left, text wraps beside and below */
+  .dr-crown-grid { display: block; overflow: hidden; }
+  .dr-crown-grid .dr-crown-img { float: left; width: 44%; margin: 0 36px 16px 24px; }
+
+  /* Team — image floats left, text wraps beside and below */
+  .team-member { display: block; overflow: hidden; margin-bottom: 72px; }
+  .team-member > div:first-child { float: left; width: 40%; margin: 0 36px 16px 24px; }
+  .team-member:last-child > div:first-child { float: right; width: 40%; margin: 0 24px 16px 36px; }
+  .team-photo-wrap { width: 100%; }
+  .team-name { width: 100%; margin: 14px 0 0; padding: 0; text-align: left; }
+  .team-member:last-child .team-name { padding: 0; text-align: right; }
+}
+@media (max-width: 600px) {
+  .hero-doc-wrap { display: none; }
+  .about-section { padding: 40px 20px; }
+  .about-nayva-section { padding-left: 20px; padding-bottom: 60px; }
+  .section-title { font-size: 24px; padding: 0 8px; margin-bottom: 32px; }
+  .dr-text p, .dr-crown-text p, .team-text-col p, .about-nayva-text p { font-size: 15px; }
+  .team-name { font-size: 15px; }
+  .about-hero { aspect-ratio: 4/3; }
+  .about-hero-right { width: 100%; }
+  .about-hero-text { text-align: center; }
+  .about-hero-subtitle { font-size: 26px; }
+  .about-hero-title { font-size: 22px; }
+  .hero-card { bottom: -70px; width: 90%; border-radius: 24px; padding: 20px 24px; }
+  .hero-doc-wrap { bottom: -70px; width: 35%; }
+  .hero-card-items { margin-left: 0; justify-content: center; gap: 16px; }
+}
+@media (max-width: 480px) {
+  .about-hero-text { padding-left: 20px; padding-right: 20px; }
+  .about-hero-subtitle { font-size: 22px; }
+  .about-hero-title { font-size: 19px; }
+}

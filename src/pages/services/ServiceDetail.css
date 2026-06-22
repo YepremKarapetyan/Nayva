@@ -1,0 +1,100 @@
+/* Image panel — replaces the video panel for All Services detail pages */
+.sd-img-panel {
+  cursor: default;
+}
+
+.sd-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtitle & description */
+.sd-subtitle {
+  font-size: clamp(0.82rem, 0.95vw, 0.94rem);
+  font-weight: 700;
+  color: #007f7e;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.sd-description {
+  font-size: clamp(0.78rem, 0.9vw, 0.86rem);
+  color: #555;
+  line-height: 1.75;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Service items list */
+.sd-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sd-list::-webkit-scrollbar { width: 3px; }
+.sd-list::-webkit-scrollbar-track { background: transparent; }
+.sd-list::-webkit-scrollbar-thumb { background: #e6f4f2; border-radius: 3px; }
+
+.sd-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #f0ebe4;
+}
+
+.sd-item:last-child {
+  border-bottom: none;
+}
+
+.sd-item--sub {
+  padding-left: 20px;
+}
+
+.sd-item--label .sd-item-name {
+  font-size: clamp(0.8rem, 0.92vw, 0.9rem);
+  font-weight: 700;
+  color: #007f7e;
+  font-style: italic;
+}
+
+.sd-item-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e6f4f2;
+  color: #007f7e;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sd-item-name {
+  flex: 1;
+  font-size: clamp(0.78rem, 0.9vw, 0.86rem);
+  color: #1a2e2c;
+  line-height: 1.45;
+}
+
+.sd-item-price {
+  font-size: clamp(0.72rem, 0.84vw, 0.82rem);
+  font-weight: 600;
+  color: #007f7e;
+  background: #e6f4f2;
+  padding: 3px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
