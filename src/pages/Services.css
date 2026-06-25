@@ -67,9 +67,10 @@
 .svc-featured-card {
   position: relative;
   border-radius: 20px;
-  overflow: hidden;
+  overflow: clip;
   cursor: pointer;
   height: clamp(120px, 12vw, 160px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
 }
 
 .svc-featured-img {
@@ -364,7 +365,7 @@
   .svc-section-title { padding-left: 16px; padding-right: 16px; }
   .svc-section-subtitle { padding-left: 16px; padding-right: 16px; }
   .svc-faq-list { padding-left: 16px; padding-right: 16px; }
-  .svc-featured-card { height: 160px; }
+  .svc-featured-card { height: 110px; }
 
   /* Beauty services & packages — shorter cards so icon+title don't clash */
   .svc-cards-wrap .svc-featured-card,

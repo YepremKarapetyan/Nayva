@@ -9,7 +9,7 @@ export const allServices = [
   { id: 'nerarkoumner', img: '/Images/all services images:icons/ներարկումներ/ներարկումներ.webp', icon: '/Images/all services images:icons/ներարկումներ/ներարկումներ icon.svg', title: 'Ներարկումներ' },
   { id: 'dajvadz', img: '/Images/all services images:icons/Tattoo/tattoo.webp', icon: '/Images/all services images:icons/Tattoo/tattoo icon.svg', title: 'Դաջվածք' },
   { id: 'aqua', img: '/Images/all services images:icons/AQUA/AQUA.webp', icon: '/Images/all services images:icons/AQUA/AQUA icon.svg', title: 'AQUA' },
-  { id: 'akne', img: '/Images/all services images:icons/acne/2148825327.webp', icon: '/Images/all services images:icons/acne/acne.svg', title: 'Ակնե' },
+  { id: 'akne', img: '/Images/Service/New procedures/ACNE.webp', icon: '/Images/all services images:icons/acne/acne.svg', title: 'Ակնե' },
   { id: 'antiage', img: '/Images/all services images:icons/Anti Age/ANTI AGE.webp', icon: '/Images/all services images:icons/Anti Age/anti age icon.svg', title: 'ANTI AGE' },
   { id: 'antiageblock', img: '/Images/all services images:icons/anti age block/anti age block.webp', icon: '/Images/all services images:icons/anti age block/anti age block.svg', title: 'ANTI AGE BLOCK' },
   { id: 'blockage', img: '/Images/all services images:icons/Block Age/Block age.webp', icon: '/Images/all services images:icons/Block Age/block age icon.svg', title: 'BLOCK AGE' },
