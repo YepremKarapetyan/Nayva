@@ -227,7 +227,7 @@ const en = {
       stats: {
         courses: { label: 'Course\nPrograms' },
         students: { label: 'Students\nTrained' },
-        satisfaction: { label: 'Satisfaction\nRate' },
+        satisfaction: { label: 'Success\nRate' },
       },
     },
 
@@ -465,7 +465,8 @@ const en = {
   },
 
   footer: {
-    desc: 'N.AYVA Center, as a cosmetology school, creates wide opportunities for students, starting from credit courses to job placement, thanks to its partnerships. It is the first in Armenia to implement distance learning for our compatriots living abroad and provide an international trilingual certificate.',
+    desc: 'N.AYVA Center, as a cosmetology school, creates wide opportunities for students, starting from credit courses to job placement, thanks to its partnerships.',
+    descExtra: 'It is the first in Armenia to implement distance learning for our compatriots living abroad and provide an international trilingual certificate.',
     schedule: {
       title: 'Work Schedule',
       daysLabel: 'Working Days',

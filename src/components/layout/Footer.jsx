@@ -10,9 +10,12 @@ export default function Footer() {
     <div className="footer-wrap">
       <footer className="footer">
         <div>
-          <img src="/Images/logo/N_Ayva_Logo_footer_white.svg" alt="N.Ayva" style={{ width: 200 }} />
+          <img src="/Images/logo/N Ayva Logo.svg" alt="N.Ayva" style={{ width: 140 }} />
           <div className="footer-logo-divider" />
-          <p className="footer-desc">{f.desc}</p>
+          <p className="footer-desc">
+            {f.desc}
+            {f.descExtra && <span className="footer-desc-extra">{' ' + f.descExtra}</span>}
+          </p>
         </div>
 
         <div className="footer-col">
